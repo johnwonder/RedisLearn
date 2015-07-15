@@ -21,7 +21,7 @@ namespace HRedisImpl
         public RedisConfig()
         {
             Host = "127.0.0.1";
-            Port = 6479;
+            Port = 6379;
             SendTimeout = 60;
             ReceiveTimeout = 60;
 

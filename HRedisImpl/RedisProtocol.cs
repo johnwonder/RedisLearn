@@ -10,7 +10,7 @@ namespace HRedisImpl
         public static readonly string Head = "*{0}\r\n";
 
 
-        public static readonly string Argument = "${0}\r\n{1}";
+        public static readonly string Argument = "${0}\r\n{1}\r\n";
 
         public static readonly char CR ='\r';
 
