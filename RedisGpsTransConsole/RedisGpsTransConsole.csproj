@@ -5,13 +5,14 @@
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{F864F2FA-C92F-41D2-857A-46B8467A9376}</ProjectGuid>
+    <ProjectGuid>{54E56DF0-B4A9-47D2-922D-F5A3E1FD7610}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>RedisConsole</RootNamespace>
-    <AssemblyName>RedisConsole</AssemblyName>
+    <RootNamespace>RedisGpsTransConsole</RootNamespace>
+    <AssemblyName>RedisGpsTransConsole</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
@@ -34,36 +35,29 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ServiceStack, Version=3.9.71.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\ServiceStack.3.9.71\lib\net35\ServiceStack.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Cassandra">
+      <HintPath>..\ZhyGpsTransConsole\bin\Debug\Cassandra.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\ZhyGpsTransConsole\bin\Debug\log4net.dll</HintPath>
     </Reference>
     <Reference Include="ServiceStack.Common">
-      <HintPath>..\..\ServiceStack.Redis-3-snapshot\lib\ServiceStack.Common.dll</HintPath>
+      <HintPath>..\..\..\..\..\code\ServiceStack.Redis-3-snapshot\lib\ServiceStack.Common.dll</HintPath>
     </Reference>
-    <Reference Include="ServiceStack.Interfaces, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\ServiceStack.Common.3.9.71\lib\net35\ServiceStack.Interfaces.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="ServiceStack.Interfaces">
+      <HintPath>..\..\..\..\..\code\RedisLearn\RedisConsole\bin\Debug\ServiceStack.Interfaces.dll</HintPath>
     </Reference>
-    <Reference Include="ServiceStack.OrmLite, Version=3.9.71.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\ServiceStack.OrmLite.SqlServer.3.9.71\lib\net35\ServiceStack.OrmLite.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="ServiceStack.OrmLite">
+      <HintPath>..\..\..\..\..\code\RedisLearn\RedisConsole\bin\Debug\ServiceStack.OrmLite.dll</HintPath>
     </Reference>
-    <Reference Include="ServiceStack.OrmLite.SqlServer, Version=3.9.71.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\ServiceStack.OrmLite.SqlServer.3.9.71\lib\net35\ServiceStack.OrmLite.SqlServer.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="ServiceStack.OrmLite.SqlServer">
+      <HintPath>..\..\..\..\..\code\RedisLearn\RedisConsole\bin\Debug\ServiceStack.OrmLite.SqlServer.dll</HintPath>
     </Reference>
-    <Reference Include="ServiceStack.Redis, Version=3.9.71.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\ServiceStack.Redis.3.9.71\lib\net35\ServiceStack.Redis.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="ServiceStack.Redis">
+      <HintPath>..\..\..\..\..\code\RedisLearn\RedisConsole\bin\Debug\ServiceStack.Redis.dll</HintPath>
     </Reference>
-    <Reference Include="ServiceStack.ServiceInterface, Version=3.9.71.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\ServiceStack.3.9.71\lib\net35\ServiceStack.ServiceInterface.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="ServiceStack.Text, Version=3.9.71.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\ServiceStack.Text.3.9.71\lib\net35\ServiceStack.Text.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="ServiceStack.Text">
+      <HintPath>..\..\..\..\..\code\RedisLearn\RedisConsole\bin\Debug\ServiceStack.Text.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -76,9 +70,10 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TransportLoc.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <None Include="app.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
